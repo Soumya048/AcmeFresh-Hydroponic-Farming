@@ -95,7 +95,7 @@ public class UserController {
 	}
 	
 	@PatchMapping("/cancel/order/{orderId}")
-	public ResponseEntity<Orders> orderProduceHandler(@PathVariable Integer orderId, @RequestParam String key) throws LogInException, OrdersException   {
+	public ResponseEntity<Orders> cancelOrderHandler(@PathVariable Integer orderId, @RequestParam String key) throws LogInException, OrdersException   {
 		Orders canceledOrder = ordersServcie.cancelOrder(orderId, key);
 		return new ResponseEntity<Orders>(canceledOrder, HttpStatus.OK);
 	}
